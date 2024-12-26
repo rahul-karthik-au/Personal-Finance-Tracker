@@ -3,33 +3,36 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider,CssBaseline } from '@mui/material';
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 const theme = createTheme({
-  // components: {
-  //   MuiStat: {
-  //     styleOverrides: {
-  //       root: {
-  //         backgroundColor: '#121212',
-  //       }
-  //     }
-  //   }
-  // },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: '#fefff0',
+        },
+      },
+    },
+  },
   palette: {
     primary: {
-      main: '#000000',
+      main: '#a89532',
     },
     secondary: {
-      main: '#f50057',
+      main: '#f4e562',
     },
   },
 });
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </React.StrictMode>
